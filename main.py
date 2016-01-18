@@ -2,8 +2,8 @@ import platform
 import sys
 
 import browser
-import net.client
-import net.server
+import net
+
 
 
 def main():
