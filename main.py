@@ -2,7 +2,7 @@ import platform
 import sys
 
 import browser
-import net
+from net import client, server
 
 
 
