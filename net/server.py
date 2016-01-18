@@ -17,10 +17,11 @@ def listen(UDP_IP, UDP_PORT):
     while 1:
         #accept a connection
         data = conn.recv(4096)
+        print("Data recieved.")
 
         # write the data to a text file
         f = open("links.txt", 'a')
-
+        print("Writing Data.")
 
         # we want the file to have no quotations, with a one line spaced out
         # hyperlinks
@@ -32,8 +33,9 @@ def listen(UDP_IP, UDP_PORT):
         data = data.replace('b' , '')
 
         f.write(data)
+
         f.close()
 
-        # if data != "": conn.close() # close out if weve retrieved data
+        if len(data) > 0 : break # close out if weve retrieved data
 
     con.close()
