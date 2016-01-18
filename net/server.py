@@ -12,9 +12,17 @@ def listen(UDP_IP, UDP_PORT):
     serversocket.bind((UDP_IP, UDP_PORT))
     serversocket.listen(1) # sure why not 1
 
+    data = ""
     conn, addr = serversocket.accept()
     while 1:
         #accept a connection
         data = conn.recv(4096)
-        print(data)
-    conn.close()
+
+        # write the data to a text file
+        f = open("links.txt")
+        f.write(data)
+        f.close()
+        
+        if data != "": conn.close() # close out if weve retrieved data
+
+    con.close()
