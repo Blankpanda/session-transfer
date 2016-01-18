@@ -19,12 +19,12 @@ def send(information, UDP_IP, UDP_PORT):
     data = client_socket.recv(4096)
 
 
-# appends a list into string with spaces constants
+# appends a list into string with newline constants
 def append_list(list):
 
     appended_list = ""
 
     for item in list:
-        appended_list += item + ' '
+        appended_list += item + '\n'
 
     return appended_list.strip()
