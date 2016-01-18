@@ -1,0 +1,32 @@
+#
+# sends appended text information to a "server"
+# thats is listening.
+#
+
+import socket
+
+def send(information, UDP_IP, UDP_PORT):
+
+    # make sure UDP_PORT is an int
+    UDP_PORT = int(UDP_PORT)
+
+    information = append_list(information)
+
+    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    client_socket.connect((UDP_IP, UDP_PORT))
+    client_socket.send(bytes(information, 'utf-8'))
+
+    data = client_socket.recv(4096)
+    client_socket.close()
+    
+
+
+# appends a list into string with newline constants
+def append_list(list):
+
+    appended_list = ""
+
+    for item in list:
+        appended_list += item + '\n'
+
+    return appended_list.strip()
