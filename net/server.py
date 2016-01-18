@@ -14,28 +14,28 @@ def listen(UDP_IP, UDP_PORT):
 
 
     conn, addr = serversocket.accept()
-    while 1:
-        #accept a connection
-        data = conn.recv(4096)
-        print("Data recieved.")
 
-        # write the data to a text file
-        f = open("links.txt", 'a')
-        print("Writing Data.")
+    #accept a connection
+    data = conn.recv(4096)
+    print("Data recieved.")
 
-        # we want the file to have no quotations, with a one line spaced out
-        # hyperlinks
-        data = str(data)
-        data = data.replace("'", '')
-        data = data.replace('"', '')
-        # python signifes byte types like b"string", we want to remove the b
-        # since were saving it in plaintext
-        data = data.replace('b' , '')
+    # write the data to a text file
+    f = open("links.txt", 'a')
+    print("Writing Data.")
 
-        f.write(data)
+    # we want the file to have no quotations, with a one line spaced out
+    # hyperlinks
+    data = str(data)
+    data = data.replace("'", '')
+    data = data.replace('"', '')
+    # python signifes byte types like b"string", we want to remove the b
+    # since were saving it in plaintext
+    data = data.replace('b' , '')
 
-        f.close()
+    f.write(data)
 
-        if len(data) > 0 : break # close out if weve retrieved data
+    f.close()
 
-    con.close()
+
+    print("data located in links.txt")
+    #con.close()
