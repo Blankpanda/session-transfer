@@ -32,7 +32,10 @@ def listen(UDP_IP, UDP_PORT):
     # since were saving it in plaintext
     data = data.replace('b' , '')
 
-    f.write(data)
+    # converts the data into a list and writes it
+    data = data.split('|')
+
+    for link in data: f.write(link + '\n')
 
     f.close()
 
