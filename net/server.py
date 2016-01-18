@@ -19,10 +19,10 @@ def listen(UDP_IP, UDP_PORT):
         data = conn.recv(4096)
 
         # write the data to a text file
-        f = open("links.txt")
+        f = open("links.txt", 'a')
         f.write(data)
         f.close()
-        
+
         if data != "": conn.close() # close out if weve retrieved data
 
     con.close()
