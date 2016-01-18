@@ -12,7 +12,7 @@ def listen(UDP_IP, UDP_PORT):
     serversocket.bind((UDP_IP, UDP_PORT))
     serversocket.listen(1) # sure why not 1
 
-    data = ""
+
     conn, addr = serversocket.accept()
     while 1:
         #accept a connection
@@ -20,9 +20,20 @@ def listen(UDP_IP, UDP_PORT):
 
         # write the data to a text file
         f = open("links.txt", 'a')
+
+
+        # we want the file to have no quotations, with a one line spaced out
+        # hyperlinks
+        data = str(data)
+        data = data.replace("'", '')
+        data = data.replace('"', '')
+        # python signifes byte types like b"string", we want to remove the b
+        # since were saving it in plaintext
+        data = data.replace('b' , '')
+
         f.write(data)
         f.close()
 
-        if data != "": conn.close() # close out if weve retrieved data
+        # if data != "": conn.close() # close out if weve retrieved data
 
     con.close()

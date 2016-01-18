@@ -17,16 +17,14 @@ def send(information, UDP_IP, UDP_PORT):
     client_socket.send(bytes(information, 'utf-8'))
 
     data = client_socket.recv(4096)
-    client_socket.close()
-    
 
 
-# appends a list into string with newline constants
+# appends a list into string with spaces constants
 def append_list(list):
 
     appended_list = ""
 
     for item in list:
-        appended_list += item + '\n'
+        appended_list += item + ' '
 
     return appended_list.strip()

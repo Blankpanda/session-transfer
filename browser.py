@@ -49,6 +49,10 @@ def retrieve_next_session_links(system):
         if "http" not in link: # covers https as well.
             links.remove(link)
 
+    # removes quotes inside of the string
+    for link in links:
+        link = link.replace('"', '')
+
     return links
 
 
