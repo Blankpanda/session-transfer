@@ -3,7 +3,7 @@ import sys
 
 import browser
 from net import client, server
-
+import net
 
 
 def main():
