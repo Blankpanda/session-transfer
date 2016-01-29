@@ -6,16 +6,18 @@ Currently the only options available are the following:
 transfering from Mozilla on Windows to Linux:
 
   On your Linux Machine type the following:
+  
       ```
-          python main.py <IP address of your linux machine> <portnumber> --listen
+      python main.py <IP address of your linux machine> <portnumber> --listen
       ```
       
   On your Windows Machine type the following:
+  
       ```
-          python main.py <IP address of your linux machine> <portnumber> --send
+      python main.py <IP address of your linux machine> <portnumber> --send
       ```
-      
 And Finally on your Linux Machine type the following:
+
       ```
-          ./linux/<browser>.sh links.txt
+      ./linux/<browser>.sh links.txt
       ```
