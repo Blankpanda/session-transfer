@@ -16,8 +16,9 @@ def main():
     Action :    specifies wether you want to send or listen
 
     Actions:
-                --listen (listens for a connection the specifed port)
+                --listen (listens for a connection on the specifed port)
                 --send   (sends appended string from mozilla settings)
+
      """
 
 
