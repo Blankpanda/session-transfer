@@ -21,8 +21,12 @@ def main():
      """
 
 
+    try:
+        script, ip, port, action = sys.argv
+    except Exception as e:
+        print(help_string)
+        
 
-    script, ip, port, action = sys.argv
     if action == "--help":
         print(help_string)
     elif action == '--listen':

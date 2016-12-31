@@ -12,7 +12,6 @@ def listen(UDP_IP, UDP_PORT):
     serversocket.bind((UDP_IP, UDP_PORT))
     serversocket.listen(1) # sure why not 1
 
-
     conn, addr = serversocket.accept()
 
     #accept a connection
