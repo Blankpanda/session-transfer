@@ -11,16 +11,17 @@ import os
 #  since the lists are seperated by a | delimiter, we
 #  seperate them into a list
 #
-def retrieve_next_session_links(system):
+def retrieve_next_session_links(system, browser):
 
     # get the paths for the firefox settings
     if system == 'Windows':
+
 
         path = os.environ['APPDATA'] # C:\\<user>\\AppData\\Roaming
         path += "\\Mozilla\\Firefox\\Profiles\\"
         profile = get_profile(path) # k9kvq567.default
         path += profile + "\\prefs.js"
-
+        
     elif system == 'Linux':
 
         path = "~/.mozilla/prefs.js"
